@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2DEBE58CBB3478C104E930B1 /* Pods_LAOZODI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1B5FE5D01D04A4471ADCBB4 /* Pods_LAOZODI.framework */; };
+		8A1EAEA320CC5AEC000573EB /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1EAEA220CC5AEC000573EB /* CartViewController.swift */; };
+		8A1EAEA520CC6387000573EB /* ProductInCartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1EAEA420CC6387000573EB /* ProductInCartCollectionViewCell.swift */; };
+		8A1EAEA720CC6703000573EB /* CartProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1EAEA620CC6703000573EB /* CartProduct.swift */; };
+		8A20E42020BBE30D00406C1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20E41F20BBE30D00406C1E /* ViewController.swift */; };
+		8A43C25920B9617F00577BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A43C25820B9617F00577BDA /* AppDelegate.swift */; };
+		8A43C25E20B9617F00577BDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A43C25C20B9617F00577BDA /* Main.storyboard */; };
+		8A43C26120B9617F00577BDA /* LAOZODI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A43C25F20B9617F00577BDA /* LAOZODI.xcdatamodeld */; };
+		8A43C26320B9617F00577BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A43C26220B9617F00577BDA /* Assets.xcassets */; };
+		8A43C26620B9617F00577BDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A43C26420B9617F00577BDA /* LaunchScreen.storyboard */; };
+		8A43C27520B96F5E00577BDA /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A43C27420B96F5E00577BDA /* SearchTableViewController.swift */; };
+		8A43C27820B9726D00577BDA /* AppCons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A43C27720B9726D00577BDA /* AppCons.swift */; };
+		8A4CC79220E3AA2F0075E1CB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CC79120E3AA2F0075E1CB /* CategoryTableViewCell.swift */; };
+		8A5A513020CEAD010045E231 /* DataImporterParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5A512F20CEAD010045E231 /* DataImporterParsing.swift */; };
+		8A71CFD320CD67B60077EF43 /* PaymentProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A71CFD220CD67B60077EF43 /* PaymentProductViewController.swift */; };
+		8A81F26620E012560005BC02 /* OrderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81F26520E012560005BC02 /* OrderObject.swift */; };
+		8A932F4720BBD2BD00707C5A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A932F4620BBD2BD00707C5A /* ProductCell.swift */; };
+		8AA07FCA20B9BF4B006091DD /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA07FC920B9BF4B006091DD /* Common.swift */; };
+		8AA07FCE20BA7C82006091DD /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA07FCD20BA7C82006091DD /* AdminViewController.swift */; };
+		8AA07FD020BAB9A9006091DD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA07FCF20BAB9A9006091DD /* Product.swift */; };
+		8AA07FD220BABC64006091DD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA07FD120BABC64006091DD /* Category.swift */; };
+		8AA07FD420BABD33006091DD /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA07FD320BABD33006091DD /* ProductType.swift */; };
+		8AA07FD720BABDEB006091DD /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA07FD620BABDEB006091DD /* FirebaseManager.swift */; };
+		8AADE77A20B9ACEF0088490E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AADE77920B9ACEF0088490E /* GoogleService-Info.plist */; };
+		8AB428B620E53ABE00794B58 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB428B520E53ABE00794B58 /* CategoryViewController.swift */; };
+		8AB428B820E53AD200794B58 /* SlideCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB428B720E53AD200794B58 /* SlideCategoryViewController.swift */; };
+		8AB428BB20E5455600794B58 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB428BA20E5455500794B58 /* SWRevealViewController.m */; };
+		8AB428BD20E54A4C00794B58 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB428BC20E54A4C00794B58 /* UIViewExtensions.swift */; };
+		8AD3C0BE20BC830100A242CC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3C0BD20BC830100A242CC /* SearchTableViewCell.swift */; };
+		8AEEE1B020CBDDE4004B6A6F /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEE1AF20CBDDE4004B6A6F /* ProductDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1DC796464511204BA901C1C6 /* Pods-LAOZODI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LAOZODI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LAOZODI/Pods-LAOZODI.debug.xcconfig"; sourceTree = "<group>"; };
+		8A1EAEA220CC5AEC000573EB /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		8A1EAEA420CC6387000573EB /* ProductInCartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductInCartCollectionViewCell.swift; path = LAOZODI/Controller/ProductInCartCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8A1EAEA620CC6703000573EB /* CartProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartProduct.swift; path = LAOZODI/Controller/CartProduct.swift; sourceTree = SOURCE_ROOT; };
+		8A20E41F20BBE30D00406C1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8A43C25520B9617F00577BDA /* LAOZODI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LAOZODI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A43C25820B9617F00577BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8A43C25D20B9617F00577BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8A43C26020B9617F00577BDA /* LAOZODI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LAOZODI.xcdatamodel; sourceTree = "<group>"; };
+		8A43C26220B9617F00577BDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A43C26520B9617F00577BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8A43C26720B9617F00577BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A43C27420B96F5E00577BDA /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		8A43C27720B9726D00577BDA /* AppCons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCons.swift; sourceTree = "<group>"; };
+		8A4CC79120E3AA2F0075E1CB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = LAOZODI/Controller/CategoryTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8A5A512F20CEAD010045E231 /* DataImporterParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImporterParsing.swift; sourceTree = "<group>"; };
+		8A71CFD220CD67B60077EF43 /* PaymentProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProductViewController.swift; sourceTree = "<group>"; };
+		8A81F26520E012560005BC02 /* OrderObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderObject.swift; path = LAOZODI/Data/DataInput/OrderObject.swift; sourceTree = SOURCE_ROOT; };
+		8A932F4620BBD2BD00707C5A /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductCell.swift; path = LAOZODI/FirebaseManager/ProductCell.swift; sourceTree = SOURCE_ROOT; };
+		8AA07FC920B9BF4B006091DD /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		8AA07FCD20BA7C82006091DD /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		8AA07FCF20BAB9A9006091DD /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Product.swift; path = LAOZODI/Controller/Addmin/Product.swift; sourceTree = SOURCE_ROOT; };
+		8AA07FD120BABC64006091DD /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Category.swift; path = LAOZODI/Controller/Addmin/Category.swift; sourceTree = SOURCE_ROOT; };
+		8AA07FD320BABD33006091DD /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductType.swift; path = LAOZODI/Controller/Addmin/ProductType.swift; sourceTree = SOURCE_ROOT; };
+		8AA07FD620BABDEB006091DD /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		8AADE77920B9ACEF0088490E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8AB428B120E5345D00794B58 /* LAOZODI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LAOZODI-Bridging-Header.h"; sourceTree = "<group>"; };
+		8AB428B520E53ABE00794B58 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = Addmin/CategoryViewController.swift; sourceTree = "<group>"; };
+		8AB428B720E53AD200794B58 /* SlideCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCategoryViewController.swift; sourceTree = "<group>"; };
+		8AB428B920E5455500794B58 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		8AB428BA20E5455500794B58 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		8AB428BC20E54A4C00794B58 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = LAOZODI/Controller/UIViewExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8AD3C0BD20BC830100A242CC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8AEEE1AF20CBDDE4004B6A6F /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		BFC76A0A862C1DAA65422F11 /* Pods-LAOZODI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LAOZODI.release.xcconfig"; path = "Pods/Target Support Files/Pods-LAOZODI/Pods-LAOZODI.release.xcconfig"; sourceTree = "<group>"; };
+		C1B5FE5D01D04A4471ADCBB4 /* Pods_LAOZODI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LAOZODI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A43C25220B9617E00577BDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DEBE58CBB3478C104E930B1 /* Pods_LAOZODI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A43C24C20B9617E00577BDA = {
+			isa = PBXGroup;
+			children = (
+				8A43C25720B9617F00577BDA /* LAOZODI */,
+				8A43C25620B9617F00577BDA /* Products */,
+				EFD17F5F3E4A6409AAA4132A /* Pods */,
+				976D0EC183B5A4E7FA946DE9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8A43C25620B9617F00577BDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A43C25520B9617F00577BDA /* LAOZODI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A43C25720B9617F00577BDA /* LAOZODI */ = {
+			isa = PBXGroup;
+			children = (
+				8AB428B920E5455500794B58 /* SWRevealViewController.h */,
+				8AB428BA20E5455500794B58 /* SWRevealViewController.m */,
+				8A5A512A20CEA9710045E231 /* Data */,
+				8AA07FD520BABDD2006091DD /* FirebaseManager */,
+				8AA07FCB20B9C73D006091DD /* Common */,
+				8AADE77920B9ACEF0088490E /* GoogleService-Info.plist */,
+				8A43C27620B9725900577BDA /* AppCons */,
+				8A43C27120B961C400577BDA /* Supporting files */,
+				8A43C27020B961B600577BDA /* Library */,
+				8A43C26F20B961AE00577BDA /* Controller */,
+				8A43C26E20B961A600577BDA /* Model */,
+				8A43C26D20B9619C00577BDA /* View */,
+				8A43C26720B9617F00577BDA /* Info.plist */,
+				8A43C25F20B9617F00577BDA /* LAOZODI.xcdatamodeld */,
+				8AB428B120E5345D00794B58 /* LAOZODI-Bridging-Header.h */,
+			);
+			path = LAOZODI;
+			sourceTree = "<group>";
+		};
+		8A43C26D20B9619C00577BDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A43C25C20B9617F00577BDA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A43C26E20B961A600577BDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8AA07FCF20BAB9A9006091DD /* Product.swift */,
+				8AA07FD120BABC64006091DD /* Category.swift */,
+				8AA07FD320BABD33006091DD /* ProductType.swift */,
+				8A932F4620BBD2BD00707C5A /* ProductCell.swift */,
+				8AD3C0BD20BC830100A242CC /* SearchTableViewCell.swift */,
+				8A1EAEA420CC6387000573EB /* ProductInCartCollectionViewCell.swift */,
+				8A1EAEA620CC6703000573EB /* CartProduct.swift */,
+				8A81F26520E012560005BC02 /* OrderObject.swift */,
+				8A4CC79120E3AA2F0075E1CB /* CategoryTableViewCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A43C26F20B961AE00577BDA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A71CFD220CD67B60077EF43 /* PaymentProductViewController.swift */,
+				8AA07FCC20BA7C69006091DD /* Addmin */,
+				8A43C27420B96F5E00577BDA /* SearchTableViewController.swift */,
+				8A20E41F20BBE30D00406C1E /* ViewController.swift */,
+				8AEEE1AF20CBDDE4004B6A6F /* ProductDetailViewController.swift */,
+				8A1EAEA220CC5AEC000573EB /* CartViewController.swift */,
+				8AB428B520E53ABE00794B58 /* CategoryViewController.swift */,
+				8AB428B720E53AD200794B58 /* SlideCategoryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A43C27020B961B600577BDA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8AB428BC20E54A4C00794B58 /* UIViewExtensions.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		8A43C27120B961C400577BDA /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				8A43C26220B9617F00577BDA /* Assets.xcassets */,
+				8A43C26420B9617F00577BDA /* LaunchScreen.storyboard */,
+				8A43C25820B9617F00577BDA /* AppDelegate.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		8A43C27620B9725900577BDA /* AppCons */ = {
+			isa = PBXGroup;
+			children = (
+				8A43C27720B9726D00577BDA /* AppCons.swift */,
+			);
+			path = AppCons;
+			sourceTree = "<group>";
+		};
+		8A5A512A20CEA9710045E231 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8A5A512C20CEA9A60045E231 /* DataOutput */,
+				8A5A512B20CEA9920045E231 /* DataInput */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8A5A512B20CEA9920045E231 /* DataInput */ = {
+			isa = PBXGroup;
+			children = (
+				8A5A512F20CEAD010045E231 /* DataImporterParsing.swift */,
+			);
+			path = DataInput;
+			sourceTree = "<group>";
+		};
+		8A5A512C20CEA9A60045E231 /* DataOutput */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataOutput;
+			sourceTree = "<group>";
+		};
+		8AA07FCB20B9C73D006091DD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8AA07FC920B9BF4B006091DD /* Common.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8AA07FCC20BA7C69006091DD /* Addmin */ = {
+			isa = PBXGroup;
+			children = (
+				8AA07FCD20BA7C82006091DD /* AdminViewController.swift */,
+			);
+			path = Addmin;
+			sourceTree = "<group>";
+		};
+		8AA07FD520BABDD2006091DD /* FirebaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				8AA07FD620BABDEB006091DD /* FirebaseManager.swift */,
+			);
+			path = FirebaseManager;
+			sourceTree = "<group>";
+		};
+		976D0EC183B5A4E7FA946DE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1B5FE5D01D04A4471ADCBB4 /* Pods_LAOZODI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFD17F5F3E4A6409AAA4132A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DC796464511204BA901C1C6 /* Pods-LAOZODI.debug.xcconfig */,
+				BFC76A0A862C1DAA65422F11 /* Pods-LAOZODI.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A43C25420B9617E00577BDA /* LAOZODI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A43C26A20B9617F00577BDA /* Build configuration list for PBXNativeTarget "LAOZODI" */;
+			buildPhases = (
+				F36496C07803ED7F8356CF63 /* [CP] Check Pods Manifest.lock */,
+				8A43C25120B9617E00577BDA /* Sources */,
+				8A43C25220B9617E00577BDA /* Frameworks */,
+				8A43C25320B9617E00577BDA /* Resources */,
+				EB8113B1F1F89BB4695B9456 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LAOZODI;
+			productName = LAOZODI;
+			productReference = 8A43C25520B9617F00577BDA /* LAOZODI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A43C24D20B9617E00577BDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Phạm Anh Tuấn";
+				TargetAttributes = {
+					8A43C25420B9617E00577BDA = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8A43C25020B9617E00577BDA /* Build configuration list for PBXProject "LAOZODI" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8A43C24C20B9617E00577BDA;
+			productRefGroup = 8A43C25620B9617F00577BDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A43C25420B9617E00577BDA /* LAOZODI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8A43C25320B9617E00577BDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A43C26620B9617F00577BDA /* LaunchScreen.storyboard in Resources */,
+				8AADE77A20B9ACEF0088490E /* GoogleService-Info.plist in Resources */,
+				8A43C26320B9617F00577BDA /* Assets.xcassets in Resources */,
+				8A43C25E20B9617F00577BDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EB8113B1F1F89BB4695B9456 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LAOZODI/Pods-LAOZODI-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LAOZODI/Pods-LAOZODI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F36496C07803ED7F8356CF63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LAOZODI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A43C25120B9617E00577BDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A43C27820B9726D00577BDA /* AppCons.swift in Sources */,
+				8AA07FD020BAB9A9006091DD /* Product.swift in Sources */,
+				8A43C26120B9617F00577BDA /* LAOZODI.xcdatamodeld in Sources */,
+				8A81F26620E012560005BC02 /* OrderObject.swift in Sources */,
+				8A71CFD320CD67B60077EF43 /* PaymentProductViewController.swift in Sources */,
+				8AA07FD720BABDEB006091DD /* FirebaseManager.swift in Sources */,
+				8A43C25920B9617F00577BDA /* AppDelegate.swift in Sources */,
+				8AA07FD420BABD33006091DD /* ProductType.swift in Sources */,
+				8AA07FD220BABC64006091DD /* Category.swift in Sources */,
+				8A1EAEA320CC5AEC000573EB /* CartViewController.swift in Sources */,
+				8A20E42020BBE30D00406C1E /* ViewController.swift in Sources */,
+				8AB428BB20E5455600794B58 /* SWRevealViewController.m in Sources */,
+				8A1EAEA520CC6387000573EB /* ProductInCartCollectionViewCell.swift in Sources */,
+				8AD3C0BE20BC830100A242CC /* SearchTableViewCell.swift in Sources */,
+				8AEEE1B020CBDDE4004B6A6F /* ProductDetailViewController.swift in Sources */,
+				8AA07FCE20BA7C82006091DD /* AdminViewController.swift in Sources */,
+				8A932F4720BBD2BD00707C5A /* ProductCell.swift in Sources */,
+				8AB428B620E53ABE00794B58 /* CategoryViewController.swift in Sources */,
+				8A5A513020CEAD010045E231 /* DataImporterParsing.swift in Sources */,
+				8AA07FCA20B9BF4B006091DD /* Common.swift in Sources */,
+				8A1EAEA720CC6703000573EB /* CartProduct.swift in Sources */,
+				8AB428BD20E54A4C00794B58 /* UIViewExtensions.swift in Sources */,
+				8A43C27520B96F5E00577BDA /* SearchTableViewController.swift in Sources */,
+				8AB428B820E53AD200794B58 /* SlideCategoryViewController.swift in Sources */,
+				8A4CC79220E3AA2F0075E1CB /* CategoryTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8A43C25C20B9617F00577BDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A43C25D20B9617F00577BDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8A43C26420B9617F00577BDA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A43C26520B9617F00577BDA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8A43C26820B9617F00577BDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8A43C26920B9617F00577BDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8A43C26B20B9617F00577BDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DC796464511204BA901C1C6 /* Pods-LAOZODI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8G29ZZ5JTD;
+				INFOPLIST_FILE = LAOZODI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codebyme.laozodi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LAOZODI/LAOZODI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A43C26C20B9617F00577BDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFC76A0A862C1DAA65422F11 /* Pods-LAOZODI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8G29ZZ5JTD;
+				INFOPLIST_FILE = LAOZODI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codebyme.laozodi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LAOZODI/LAOZODI-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A43C25020B9617E00577BDA /* Build configuration list for PBXProject "LAOZODI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A43C26820B9617F00577BDA /* Debug */,
+				8A43C26920B9617F00577BDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A43C26A20B9617F00577BDA /* Build configuration list for PBXNativeTarget "LAOZODI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A43C26B20B9617F00577BDA /* Debug */,
+				8A43C26C20B9617F00577BDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8A43C25F20B9617F00577BDA /* LAOZODI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8A43C26020B9617F00577BDA /* LAOZODI.xcdatamodel */,
+			);
+			currentVersion = 8A43C26020B9617F00577BDA /* LAOZODI.xcdatamodel */;
+			path = LAOZODI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8A43C24D20B9617E00577BDA /* Project object */;
+}
