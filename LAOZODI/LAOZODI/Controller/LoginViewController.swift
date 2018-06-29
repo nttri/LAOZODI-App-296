@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, AlertDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         firebaseAuth.delegate = self
-        //autoLogin()
+        autoLogin()
         self.updateUI()
     }
     
