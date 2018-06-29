@@ -17,17 +17,46 @@ class PageViewController: UIViewController {
     let images: [String] = ["banner1.jpg","banner2.jpg","banner3.jpg"]
     fileprivate var frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     fileprivate var currentPage = 0
+    fileprivate var timer: Timer?
+    var loadingTime = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
         pageControl.numberOfPages = 3
+        configUI()
+        loadImageAndShow()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadingTime = 0
+        timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(updateLoadingBar), userInfo: nil, repeats: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func configUI(){
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.bounces = false
         let tapAction = UITapGestureRecognizer(target: self, action: #selector(self.scrollViewTapped(_:)))
         scrollView.addGestureRecognizer(tapAction)
-        loadImageAndShow()
+    }
+    
+    @objc func updateLoadingBar(){
+        loadingTime += 1
+        if loadingTime == 200 {
+            loadingTime = 0
+            currentPage += 1
+            if(currentPage >= 3){
+                currentPage = 0
+            }
+            scrollView.setContentOffset(CGPoint(x: Int(WIDTH) * currentPage, y: 0), animated: true)
+            pageControl.currentPage = currentPage
+        }
     }
     
     func loadImageAndShow(){
