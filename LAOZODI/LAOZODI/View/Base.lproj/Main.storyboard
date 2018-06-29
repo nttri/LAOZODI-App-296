@@ -1341,20 +1341,46 @@
             </objects>
             <point key="canvasLocation" x="549" y="-1983"/>
         </scene>
-        <!--View Controller-->
+        <!--Page View Controller-->
         <scene sceneID="Jb5-y0-xls">
             <objects>
-                <viewController id="LCa-H5-UIN" sceneMemberID="viewController">
+                <viewController id="LCa-H5-UIN" customClass="PageViewController" customModule="LAOZODI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7dg-YX-mwp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhz-Ji-BUo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-81-7Qn">
+                                <rect key="frame" x="0.0" y="201" width="414" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="LJT-g8-tcS"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.98453691710000002" green="0.1198977229" blue="0.090601436450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Sc-81-7Qn" firstAttribute="leading" secondItem="XV1-aE-x08" secondAttribute="leading" id="1Si-3k-mVP"/>
+                            <constraint firstItem="XV1-aE-x08" firstAttribute="bottom" secondItem="zhz-Ji-BUo" secondAttribute="bottom" id="8IH-AL-8xW"/>
+                            <constraint firstItem="zhz-Ji-BUo" firstAttribute="leading" secondItem="XV1-aE-x08" secondAttribute="leading" id="91i-Dz-BYq"/>
+                            <constraint firstItem="zhz-Ji-BUo" firstAttribute="top" secondItem="XV1-aE-x08" secondAttribute="top" id="AMk-fp-Jcf"/>
+                            <constraint firstItem="XV1-aE-x08" firstAttribute="bottom" secondItem="5Sc-81-7Qn" secondAttribute="bottom" id="Gnq-Mn-y5w"/>
+                            <constraint firstItem="XV1-aE-x08" firstAttribute="trailing" secondItem="zhz-Ji-BUo" secondAttribute="trailing" id="X6t-mI-1dL"/>
+                            <constraint firstItem="5Sc-81-7Qn" firstAttribute="trailing" secondItem="XV1-aE-x08" secondAttribute="trailing" id="ybQ-sH-KY3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XV1-aE-x08"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="5Sc-81-7Qn" id="yLq-T1-LPK"/>
+                        <outlet property="scrollView" destination="zhz-Ji-BUo" id="G4X-r5-H5H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9w-L3-43J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-481" y="-1709"/>
+            <point key="canvasLocation" x="-481" y="-1721"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TpW-eF-mGY">
