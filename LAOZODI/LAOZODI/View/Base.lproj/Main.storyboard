@@ -1022,7 +1022,7 @@
                                     <constraint firstAttribute="height" constant="50" id="aez-3v-1Q8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="TIẾN HÀNH THANH TOÁN">
+                                <state key="normal" title="TIẾP TỤC">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1057,11 +1057,109 @@
                         <outlet property="tfPhoneNumber" destination="Xw8-Mq-6Sl" id="RWR-Df-dXN"/>
                         <outlet property="tfStreet" destination="Coj-ah-Kbu" id="M8Z-qT-LtD"/>
                         <outlet property="tfWard" destination="egE-Yg-3Uz" id="yrI-c1-9ZS"/>
+                        <segue destination="syt-8k-hA1" kind="push" identifier="waytopay" id="meo-6K-Hoc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONk-6q-cJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="223.18840579710147" y="264.94565217391306"/>
+        </scene>
+        <!--Way To Pay-->
+        <scene sceneID="TYA-WR-u36">
+            <objects>
+                <viewController id="syt-8k-hA1" customClass="WayToPay" customModule="LAOZODI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="waytopay" id="MVq-ME-FcI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ux-YK-oeG" customClass="AKRadioButton" customModule="LAOZODI" customModuleProvider="target">
+                                <rect key="frame" x="51" y="135" width="250" height="30"/>
+                                <state key="normal" title="Thanh toán tiền mặt khi nhận hàng"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bH3-lh-iKL" customClass="AKRadioButton" customModule="LAOZODI" customModuleProvider="target">
+                                <rect key="frame" x="51" y="173" width="250" height="30"/>
+                                <state key="normal" title="Thẻ ATM nội địa / Internet Banking"/>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAl-Im-6fS">
+                                <rect key="frame" x="94" y="282" width="207" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.49767345280000003" blue="0.075226735020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RrX-9s-5gE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="TIẾP TỤC">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onBtnPaymentClick:" destination="GDA-4m-UYG" eventType="touchUpInside" id="AdF-Jt-fMc"/>
+                                    <action selector="selectedIndex:" destination="syt-8k-hA1" eventType="touchUpInside" id="C5j-6C-Jda"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LV-hJ-5JV" customClass="AKRadioButton" customModule="LAOZODI" customModuleProvider="target">
+                                <rect key="frame" x="57" y="211" width="322" height="30"/>
+                                <state key="normal" title="Thanh toán bằng thẻ quốc tế Visa, Master, JCB"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Ux-YK-oeG" firstAttribute="trailing" secondItem="qAl-Im-6fS" secondAttribute="trailing" id="FgH-XE-BJM"/>
+                            <constraint firstItem="SIe-KI-lct" firstAttribute="trailing" secondItem="1Ux-YK-oeG" secondAttribute="trailing" constant="113" id="Ki1-Oq-1Ih"/>
+                            <constraint firstItem="1Ux-YK-oeG" firstAttribute="leading" secondItem="SIe-KI-lct" secondAttribute="leading" constant="51" id="Wb9-vm-y68"/>
+                            <constraint firstItem="1Ux-YK-oeG" firstAttribute="leading" secondItem="bH3-lh-iKL" secondAttribute="leading" id="Yws-jD-fYR"/>
+                            <constraint firstItem="1Ux-YK-oeG" firstAttribute="trailing" secondItem="bH3-lh-iKL" secondAttribute="trailing" id="Z4C-UG-Bdz"/>
+                            <constraint firstItem="1Ux-YK-oeG" firstAttribute="centerX" secondItem="9LV-hJ-5JV" secondAttribute="centerX" id="eO9-B7-6gj"/>
+                            <constraint firstItem="qAl-Im-6fS" firstAttribute="leading" secondItem="SIe-KI-lct" secondAttribute="leading" constant="94" id="fJ0-W5-Gvl"/>
+                            <constraint firstItem="9LV-hJ-5JV" firstAttribute="top" secondItem="bH3-lh-iKL" secondAttribute="bottom" constant="8" id="j98-Vm-iEN"/>
+                            <constraint firstItem="1Ux-YK-oeG" firstAttribute="top" secondItem="SIe-KI-lct" secondAttribute="top" constant="71" id="kGY-uW-Bwy"/>
+                            <constraint firstItem="qAl-Im-6fS" firstAttribute="top" secondItem="9LV-hJ-5JV" secondAttribute="bottom" constant="41" id="nDW-B0-mR4"/>
+                            <constraint firstItem="bH3-lh-iKL" firstAttribute="top" secondItem="1Ux-YK-oeG" secondAttribute="bottom" constant="8" id="xR1-Xb-x7i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SIe-KI-lct"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XBW-mH-yg1"/>
+                    <connections>
+                        <outletCollection property="radioButtons" destination="1Ux-YK-oeG" collectionClass="NSMutableArray" id="4D7-aC-H96"/>
+                        <outletCollection property="radioButtons" destination="bH3-lh-iKL" collectionClass="NSMutableArray" id="szI-Hj-yQz"/>
+                        <outletCollection property="radioButtons" destination="9LV-hJ-5JV" collectionClass="NSMutableArray" id="Aws-4B-QZH"/>
+                        <segue destination="iL5-eS-pwM" kind="push" identifier="acceptPay" id="T8r-Us-pYh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3t-7J-iou" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.6956521739131" y="264.94565217391306"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7vk-Ry-Z1K">
+            <objects>
+                <viewController id="iL5-eS-pwM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RKN-C5-FcF" customClass="AcceptPsy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0Q-53-y1B" customClass="AKRadioButton" customModule="LAOZODI" customModuleProvider="target">
+                                <rect key="frame" x="53" y="257" width="319" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Đơn đặt hàng của bạn đã được đặt thành công"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYw-qf-QjP" customClass="AKRadioButton" customModule="LAOZODI" customModuleProvider="target">
+                                <rect key="frame" x="40" y="295" width="345" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Vui lòng kiểm tra email để biết tình trạng đơn hàng"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="4Vb-ns-Fds"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tiK-Kn-62B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcU-bS-ScS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794" y="265"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="IJf-UB-T4T">

@@ -197,8 +197,9 @@ class PaymentProductViewController: UIViewController {
                 let alertController = UIAlertController(title: "THôNG BÁO", message: "Đơn hàng số \(currentOrderNumber + 1) của bạn đang được xử lý", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
                 self.present(alertController, animated: true,completion: nil)
-                self.tabBarController?.selectedIndex = 0
+                //self.tabBarController?.selectedIndex = 0
             })
+            self.performSegue(withIdentifier: "waytopay", sender: self)
         }
     }
     
