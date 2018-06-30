@@ -18,6 +18,10 @@ class FirebaseAuthenAPI{
     
     weak var delegate: AlertDelegate?
     
+    static let sharedInstance = FirebaseAuthenAPI()
+    
+    private init(){}
+    
     //MARK - create account method
     func createAccount(_ email:String,_ password: String, screen:UIViewController){
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
