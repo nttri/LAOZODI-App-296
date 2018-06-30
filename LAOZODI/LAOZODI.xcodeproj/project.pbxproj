@@ -20,6 +20,7 @@
 		8A43C27520B96F5E00577BDA /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A43C27420B96F5E00577BDA /* SearchTableViewController.swift */; };
 		8A43C27820B9726D00577BDA /* AppCons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A43C27720B9726D00577BDA /* AppCons.swift */; };
 		8A4CC79220E3AA2F0075E1CB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CC79120E3AA2F0075E1CB /* CategoryTableViewCell.swift */; };
+		8A54102220E75C7C004BC58B /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54102120E75C7C004BC58B /* ProductCollectionViewCell.swift */; };
 		8A5A513020CEAD010045E231 /* DataImporterParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5A512F20CEAD010045E231 /* DataImporterParsing.swift */; };
 		8A71CFD320CD67B60077EF43 /* PaymentProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A71CFD220CD67B60077EF43 /* PaymentProductViewController.swift */; };
 		8A81F26620E012560005BC02 /* OrderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81F26520E012560005BC02 /* OrderObject.swift */; };
@@ -55,6 +56,7 @@
 		8A43C27420B96F5E00577BDA /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		8A43C27720B9726D00577BDA /* AppCons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCons.swift; sourceTree = "<group>"; };
 		8A4CC79120E3AA2F0075E1CB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = LAOZODI/Controller/CategoryTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8A54102120E75C7C004BC58B /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductCollectionViewCell.swift; path = LAOZODI/Controller/ProductCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		8A5A512F20CEAD010045E231 /* DataImporterParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImporterParsing.swift; sourceTree = "<group>"; };
 		8A71CFD220CD67B60077EF43 /* PaymentProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProductViewController.swift; sourceTree = "<group>"; };
 		8A81F26520E012560005BC02 /* OrderObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderObject.swift; path = LAOZODI/Data/DataInput/OrderObject.swift; sourceTree = SOURCE_ROOT; };
@@ -150,6 +152,7 @@
 				8A1EAEA620CC6703000573EB /* CartProduct.swift */,
 				8A81F26520E012560005BC02 /* OrderObject.swift */,
 				8A4CC79120E3AA2F0075E1CB /* CategoryTableViewCell.swift */,
+				8A54102120E75C7C004BC58B /* ProductCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				8A81F26620E012560005BC02 /* OrderObject.swift in Sources */,
 				8A71CFD320CD67B60077EF43 /* PaymentProductViewController.swift in Sources */,
 				8AA07FD720BABDEB006091DD /* FirebaseManager.swift in Sources */,
+				8A54102220E75C7C004BC58B /* ProductCollectionViewCell.swift in Sources */,
 				8A43C25920B9617F00577BDA /* AppDelegate.swift in Sources */,
 				8AA07FD420BABD33006091DD /* ProductType.swift in Sources */,
 				8AA07FD220BABC64006091DD /* Category.swift in Sources */,

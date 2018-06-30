@@ -36,7 +36,17 @@ public class AppCons{
     
     public class ProductGroupName{
         public static let MEN_FASHION = "MenFashion"
+        public static let WOMAN_FASHION =  "WomanFashion"
+        public static let ELECTRONIC_DEVICE = "ElectronicDevice"
+        public static let FOODS = "Foods"
+        public static let BABY_TOY_MOTHER = "BabyToyMothers"
     }
+    
+    public class CommonAttribute{
+        public static let BABYTOY_MOTHER_SUB_GROUP =  "BabyToyMother"
+        public static let PRODUCT = "Product"
+    }
+
     
     public class ManFashionGroupProduct{
         
@@ -51,6 +61,22 @@ public class AppCons{
         public static let CHILDREN_BAGS    = "ChildrenBags"
         
     }
+    
+    public class WomanFashionGroupProduct{
+    
+    }
+    
+    public class ElectronicDeviceGroupProduct{
+        public static let  MOBILE_PHONE =  "MobilePhone"
+        public static let TABLET        =  "Tablet"
+        public static let LAPTOP        =  "laptop"
+        public static let DESKTOP       =  "Desktop"
+        public static let SOUND         =  "Sound"
+        public static let CAMENRA       =  "Camera"
+        public static let PLAYSTATION   =  "PlayStation"
+    }
+    
+    
     
     public class ManClothingGroupProduct{
         public static let COAT = "Coat"

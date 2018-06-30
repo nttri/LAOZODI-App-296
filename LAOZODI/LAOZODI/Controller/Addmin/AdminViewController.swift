@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
+import FirebaseStorage
 
 enum TextFieldType{
    case  PRODUCT_GROUP,SUB_GROUP,PRODUCT_TYPE
@@ -34,8 +36,13 @@ class AdminViewController: UIViewController {
     @IBOutlet weak var tfProductBrand: UITextField!
     @IBOutlet weak var tfProductWarranty: UITextField!
     
+
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tfProductURLImage: UITextField!
-    let productGroupData:[String] = [AppCons.ProductGroupName.MEN_FASHION]
+    let productGroupData:[String] = [AppCons.ProductGroupName.MEN_FASHION,
+                                     AppCons.ProductGroupName.ELECTRONIC_DEVICE,
+                                     AppCons.ProductGroupName.FOODS,
+                                     AppCons.ProductGroupName.BABY_TOY_MOTHER]
     
     let manFashionProductGroup:[String] = [AppCons.ManFashionGroupProduct.BOYS_ACCESSORIES,
                                           AppCons.ManFashionGroupProduct.BOYS_OUTFITS,
@@ -54,10 +61,33 @@ class AdminViewController: UIViewController {
                                              AppCons.ManClothingGroupProduct.T_SHIRT,
                                              AppCons.ManClothingGroupProduct.VEST]
     
+    
+    let electronicDevice: [String]  =  [
+        AppCons.ElectronicDeviceGroupProduct.MOBILE_PHONE,
+        AppCons.ElectronicDeviceGroupProduct.CAMENRA,
+        AppCons.ElectronicDeviceGroupProduct.DESKTOP,
+        AppCons.ElectronicDeviceGroupProduct.LAPTOP,
+        AppCons.ElectronicDeviceGroupProduct.PLAYSTATION,
+        AppCons.ElectronicDeviceGroupProduct.SOUND,
+        AppCons.ElectronicDeviceGroupProduct.TABLET
+                                       ]
+    
+    
+    let electronicProduct :[String] = ["Product"]
+
+    
     override func viewDidLoad() {
         
     
         super.viewDidLoad()
+        
+        
+       
+        
+        let tapGesTure = UITapGestureRecognizer(target: self, action: #selector(tapProductImage));
+        tapGesTure.numberOfTapsRequired = 1
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGesTure)
         
         
         //FirebaseManager.shared.getMenFashionTypeIndex()
@@ -77,6 +107,9 @@ class AdminViewController: UIViewController {
         
         productTypePickerView.delegate = self
         productTypePickerView.dataSource = self
+        
+    
+   
         
         
         
@@ -123,28 +156,45 @@ class AdminViewController: UIViewController {
     
     @IBAction func btnCreateNewProductPressed(_ sender: Any) {
         
-        FirebaseManager.shared.databaseReference.child(AppCons.IdentifierIndexName.MEN_FASHION_ID).observeSingleEvent(of: .value, with: {(snapshot) in
-            var currentId = snapshot.value as! Int
-            print("CURRENT ID : \(currentId)")
-            let productId = currentId + 1
-            FirebaseManager.shared.databaseReference.child(AppCons.IdentifierIndexName.MEN_FASHION_ID).setValue(productId)
-            let productGroup = self.tfProductGroup.text!
-            let subGroup = self.tfSubGroup.text!
-            let productType = self.tfProductType.text!
-            
-            let productName = self.tfProductName.text!
-            let productDescription = self.tfProductDescription.text!
-            let productPrice = Int(self.tfProductPrice.text!)!
-            let productBrand = self.tfProductBrand.text!
-            let productWarranty = Int(self.self.tfProductWarranty.text!)!
-            let productURLImage = self.tfProductURLImage.text!
-            
-            let product: Product = Product(Identifier: productId, Name: productName, Description: productDescription, Price: productPrice, Brand: productBrand, StrURLImage: productURLImage, Warranty: productWarranty)
-            
-            print("product information \(product.brand)")
-            FirebaseManager.shared.addProductToFirebaseDatabase(Product: product, ProductGroup: productGroup, SubGroup: subGroup, ProductType: productType)
-        })
       
+        let imageName = UUID().uuidString;
+        let firebaseStorageRef =  Storage.storage().reference().child("\(imageName).png")
+        if let uploadData = UIImagePNGRepresentation(self.imageView.image!){
+            firebaseStorageRef.putData(uploadData, metadata: nil, completion:{(metaData,error) in
+            if error != nil{
+                print(error)
+                return
+            }
+            
+            if let url = metaData?.downloadURL(){
+            
+            
+                    FirebaseManager.shared.databaseReference.child(AppCons.IdentifierIndexName.MEN_FASHION_ID).observeSingleEvent(of: .value, with: {(snapshot) in
+                        var currentId = snapshot.value as! Int
+                        print("CURRENT ID : \(currentId)")
+                        let productId = currentId + 1
+                        FirebaseManager.shared.databaseReference.child(AppCons.IdentifierIndexName.MEN_FASHION_ID).setValue(productId)
+                        let productGroup = self.tfProductGroup.text!
+                        let subGroup = self.tfSubGroup.text!
+                        let productType = self.tfProductType.text!
+            
+                        let productName = self.tfProductName.text!
+                        let productDescription = self.tfProductDescription.text!
+                        let productPrice = Int(self.tfProductPrice.text!)!
+                        let productBrand = self.tfProductBrand.text!
+                        let productWarranty = Int(self.self.tfProductWarranty.text!)!
+                        let productURLImage = url.absoluteString
+            
+                        let product: Product = Product(Identifier: productId, Name: productName, Description: productDescription, Price: productPrice, Brand: productBrand, StrURLImage: productURLImage, Warranty: productWarranty)
+            
+                        print("product information \(product.brand)")
+                        FirebaseManager.shared.addProductToFirebaseDatabase(Product: product, ProductGroup: productGroup, SubGroup: subGroup, ProductType: productType)
+                    })
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        })
+        }
         
     }
     
@@ -177,6 +227,20 @@ extension AdminViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case PickerViewTag.PRODUCT_GROUP_PICKER_VIEW_TAG:
             return productGroupData.count
         case PickerViewTag.SUB_GROUP_PICKER_VIEW_TAG:
+            switch tfProductGroup.text{
+            case AppCons.ProductGroupName.MEN_FASHION?:
+                return manFashionProductGroup.count
+                
+            case AppCons.ProductGroupName.ELECTRONIC_DEVICE?:
+                return electronicDevice.count
+            case AppCons.ProductGroupName.FOODS?:
+                return 1
+                
+            case AppCons.ProductGroupName.BABY_TOY_MOTHER?:
+                return 1
+            default:
+                return -1
+            }
             return manFashionProductGroup.count
         case PickerViewTag.PRODUCT_TYPE_PICKER_VIEW_TAG:
             return manClothingProductGroup.count
@@ -191,6 +255,19 @@ extension AdminViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         case PickerViewTag.PRODUCT_GROUP_PICKER_VIEW_TAG:
             return productGroupData[row]
         case PickerViewTag.SUB_GROUP_PICKER_VIEW_TAG:
+            switch tfProductGroup.text{
+            case AppCons.ProductGroupName.MEN_FASHION?:
+                return manFashionProductGroup[row]
+            case AppCons.ProductGroupName.ELECTRONIC_DEVICE?:
+                return electronicDevice[row]
+            case AppCons.ProductGroupName.FOODS?:
+                return "Food"
+            case AppCons.ProductGroupName.BABY_TOY_MOTHER?:
+                return AppCons.CommonAttribute.BABYTOY_MOTHER_SUB_GROUP
+            default:
+                return nil
+            }
+            
             return manFashionProductGroup[row]
         case PickerViewTag.PRODUCT_TYPE_PICKER_VIEW_TAG:
             return manClothingProductGroup[row]
@@ -207,15 +284,81 @@ extension AdminViewController: UIPickerViewDelegate,UIPickerViewDataSource{
             tfProductGroup.text = productGroupData[row]
             break
         case PickerViewTag.SUB_GROUP_PICKER_VIEW_TAG:
-            tfSubGroup.text = manFashionProductGroup[row]
+            switch tfProductGroup.text{
+            case AppCons.ProductGroupName.MEN_FASHION?:
+                tfSubGroup.text = manFashionProductGroup[row]
+                break
+            case AppCons.ProductGroupName.ELECTRONIC_DEVICE?:
+                tfSubGroup.text = electronicDevice[row]
+                break
+                
+            case AppCons.ProductGroupName.FOODS?:
+                tfSubGroup.text  = "Food"
+                break
+            case  AppCons.ProductGroupName.BABY_TOY_MOTHER?:
+                tfSubGroup.text = AppCons.CommonAttribute.BABYTOY_MOTHER_SUB_GROUP
+            default:
+                break
+            }
             break
         case PickerViewTag.PRODUCT_TYPE_PICKER_VIEW_TAG:
-            tfProductType.text = manClothingProductGroup[row]
-            break
+            switch tfProductGroup.text{
+            case AppCons.ProductGroupName.MEN_FASHION?:
+                tfProductType.text = manClothingProductGroup[row]
+                break
+            case AppCons.ProductGroupName.ELECTRONIC_DEVICE?:
+                tfProductType.text = electronicProduct[0]
+            case AppCons.ProductGroupName.FOODS?:
+                tfProductType.text = "Product"
+                break
+                
+            case AppCons.ProductGroupName.BABY_TOY_MOTHER?:
+                tfProductType.text = AppCons.CommonAttribute.PRODUCT
+                break
+            default:
+                break
+            }
+          
         default:
             break
         }
     }
+}
+
+extension AdminViewController :UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    @objc func tapProductImage(){
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var selectedImageFromPicker: UIImage?
+        if let editedImage  = info["UIImagePickerControllerEditedImage"] as? UIImage{
+            selectedImageFromPicker = editedImage
+        }
+        else if let orginalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage{
+            selectedImageFromPicker = orginalImage
+        }
+        
+        if let selectedImage = selectedImageFromPicker{
+            imageView.image = selectedImage
+        }
+        
+        
+        print("@@@@@@@@@@@@@@@@@@@@@@@@")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+    }
+    
+    
+    
+    
 }
 
 
