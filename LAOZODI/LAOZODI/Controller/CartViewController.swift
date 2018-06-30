@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class CartViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+class CartViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
     var listProduct:[ProductInCartObject] = []
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -20,10 +20,44 @@ class CartViewController: UIViewController,UICollectionViewDataSource,UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ProductInCartCollectionViewCell
         cell.lbProductName.text = listProduct[indexPath.row].product?.name
         cell.tfAmount.text = "\(listProduct[indexPath.row].number)"
-        cell.tfProductPrice.text = "\(listProduct[indexPath.row].product!.price * listProduct[indexPath.row].number) VND"
-        cell.imgProduct.layer.cornerRadius =  cell.imgProduct.frame.height/2
+        cell.tfProductPrice.text = "\(listProduct[indexPath.row].product!.price * listProduct[indexPath.row].number) vnd"
+        
+        //cell.imgProduct.makeShadowAnimation()
+        cell.makeShadowAnimation()
+        cell.imgProduct.makeShadowAnimation()
+        cell.tfProductPrice.makeShadowAnimation()
+        
+        
+        let productImageURL = listProduct[indexPath.row].product?.strURLImage
+        if productImageURL != nil{
+            let url = URL(string: productImageURL!)
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data,resspond,error) in
+                if error != nil{
+                    print("@@@@@@@@@@@@@@ ERROR\(error) @@@@@@@@@@@@")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    cell.imgProduct.image = UIImage(data: data!)
+                }
+                
+            }).resume()
+        }
+        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width - 16
+        let height = self.view.frame.height / 4 - 32
+        
+        return CGSize(width: width, height: height)
+    }
+    
+
+    
+
     
     
     
@@ -36,8 +70,8 @@ class CartViewController: UIViewController,UICollectionViewDataSource,UICollecti
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         
         let height = (view.frame.height - 100)/4
         let with = view.frame.width

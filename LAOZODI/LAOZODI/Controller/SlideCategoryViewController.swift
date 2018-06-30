@@ -30,6 +30,9 @@ class SlideCategoryViewController: UIViewController,UITableViewDelegate,UITableV
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         // Do any additional setup after loading the view.
     }
     
@@ -64,6 +67,41 @@ class SlideCategoryViewController: UIViewController,UITableViewDelegate,UITableV
         
         
         cell.name.text = categorys[indexPath.row]
+        switch cell.name.text {
+        case AppCons.Category.DO_AN_HANG_HOA?:
+            cell.imageIcon.image = UIImage(named: "foods")
+            break
+        case AppCons.Category.DO_CHOI_ME_BE?:
+            cell.imageIcon.image = UIImage(named: "toys")
+            break
+        case AppCons.Category.OTO_XEMAY?:
+            cell.imageIcon.image = UIImage(named: "motorbike")
+            break
+        case AppCons.Category.PHU_KIEN_DIEN_TU?:
+            cell.imageIcon.image = UIImage(named: "headphones")
+            break
+        case AppCons.Category.PHU_KIEN_THOI_TRANG?:
+            cell.imageIcon.image = UIImage(named: "watch")
+            break
+        case AppCons.Category.SUC_KHOE_LAM_DEP?:
+            cell.imageIcon.image = UIImage(named: "health")
+            break
+            
+        case AppCons.Category.THE_THAO_DU_LICH?:
+            cell.imageIcon.image = UIImage(named: "travel")
+            break
+        case AppCons.Category.THIET_BI_DIEN_TU?:
+            cell.imageIcon.image = UIImage(named: "phone")
+            break
+        case AppCons.Category.THOI_TRANG_NAM?:
+            cell.imageIcon.image = UIImage(named: "manFashion")
+            break
+        case AppCons.Category.THOI_TRANG_NU?:
+            cell.imageIcon.image = UIImage(named: "womanFashion")
+            break
+        default:
+            break
+        }
         return cell
     }
     

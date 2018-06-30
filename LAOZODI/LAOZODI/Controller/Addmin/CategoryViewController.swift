@@ -15,7 +15,7 @@ class CatagoryViewController: UIViewController,UICollectionViewDelegate,UICollec
     var listProducts:[Product] = []
     
     @IBOutlet var collectionView: UICollectionView!
-    var type: String = AppCons.Category.THOI_TRANG_NAM
+    var type: String = AppCons.Category.DO_AN_HANG_HOA
     @IBOutlet weak var btnCategoryMenu: UIBarButtonItem!
     var slideCategoryMenu:SlideCategoryViewController?
     override func viewDidLoad() {
@@ -101,6 +101,12 @@ class CatagoryViewController: UIViewController,UICollectionViewDelegate,UICollec
         return CGSize(width: width, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let productDetailViewController: ProductDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: AppCons.Identify.PRODUCT_DEATAIL_VIEW_CONTROLLER_IDENTIFY!) as! ProductDetailViewController
+            productDetailViewController.product = listProducts[indexPath.row]
+        
+        self.navigationController?.pushViewController(productDetailViewController, animated: true)
+    }
 
 }
 
