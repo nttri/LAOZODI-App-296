@@ -126,7 +126,7 @@ class ViewController: UIViewController,UISearchControllerDelegate, UISearchResul
     */
 }
 
-extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -172,6 +172,14 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width/2 - 8
+        let height = self.view.frame.height/3
+        
+        return CGSize(width: width, height: height)
+    }
+
     
     
 }

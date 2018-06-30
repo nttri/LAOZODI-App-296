@@ -42,7 +42,13 @@ class SlideCategoryViewController: UIViewController,UITableViewDelegate,UITableV
        return  categorys.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt
+        indexPath: IndexPath) {
+        
+        
+        let selectedCell = tableView.cellForRow(at: indexPath)! as! CategoryTableViewCell
+        selectedCell.contentView.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        
         self.categoryDelegate?.sendData()
         let desController = storyboard?.instantiateViewController(withIdentifier: "CatagoryViewController") as!CatagoryViewController
         desController.type = categorys[indexPath.row]
@@ -53,6 +59,10 @@ class SlideCategoryViewController: UIViewController,UITableViewDelegate,UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CategoryTableViewCell
         //cell?.textLabel?.text = categorys[indexPath.row]
+
+        
+        
+        
         cell.name.text = categorys[indexPath.row]
         return cell
     }
