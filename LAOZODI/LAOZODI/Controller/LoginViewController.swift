@@ -11,7 +11,6 @@ import UIKit
 class LoginViewController: UIViewController, AlertDelegate {
     
     var screenHeight:CGFloat = 0
-    let firebaseAuth = FirebaseAuthenAPI()
     
     @IBOutlet weak var appTitle: UILabel!
     @IBOutlet weak var emailField: UITextField!
@@ -21,14 +20,13 @@ class LoginViewController: UIViewController, AlertDelegate {
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        firebaseAuth.delegate = self
+        FirebaseAuthenAPI.sharedInstance.delegate = self
         autoLogin()
         self.updateUI()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: config func
@@ -41,19 +39,18 @@ class LoginViewController: UIViewController, AlertDelegate {
     @IBAction func loginTouched(_ sender: Any) {
         let email:String? = emailField.text
         let password:String? = passwordField.text
-        firebaseAuth.login(email!, password!, screen: self)
+        FirebaseAuthenAPI.sharedInstance.login(email!, password!, screen: self)
     }
     
     @IBAction func registerTouched(_ sender: Any) {
         let email:String? = emailField.text
         let password:String? = passwordField.text
-        firebaseAuth.createAccount(email!,password!, screen: self)
+        FirebaseAuthenAPI.sharedInstance.createAccount(email!,password!, screen: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showHomeViewControllerSegue"{
             let viewController = segue.destination as! UITabBarController
-            //viewController.firebaseAuth = firebaseAuth
         }
     }
     
@@ -61,7 +58,7 @@ class LoginViewController: UIViewController, AlertDelegate {
     func autoLogin(){
         if let email = UserDefaults.standard.value(forKey: "Email") as? String, let password = UserDefaults.standard.value(forKey: "Password") as? String{
             print(email)
-            firebaseAuth.login(email, password, screen: self)
+            FirebaseAuthenAPI.sharedInstance.login(email, password, screen: self)
         }
     }
     
