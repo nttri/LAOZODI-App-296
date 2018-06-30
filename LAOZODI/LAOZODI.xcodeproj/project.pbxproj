@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		02359FD920E74CF6002C613D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02359FD820E74CF5002C613D /* AccountViewController.swift */; };
 		02359FDD20E77C4A002C613D /* AccountOptionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02359FDC20E77C4A002C613D /* AccountOptionTableVC.swift */; };
+		02359FDF20E7A059002C613D /* AccountInfoEditTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02359FDE20E7A059002C613D /* AccountInfoEditTVC.swift */; };
+		02359FE120E7BF11002C613D /* AccountInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02359FE020E7BF11002C613D /* AccountInfoTVC.swift */; };
 		02B6488B20E66BEA00D11A5C /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6488A20E66BEA00D11A5C /* FirebaseAuthentication.swift */; };
 		02B6488D20E66C6C00D11A5C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6488C20E66C6C00D11A5C /* LoginViewController.swift */; };
 		02B6488F20E6792400D11A5C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6488E20E6792400D11A5C /* PageViewController.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		02359FD820E74CF5002C613D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		02359FDC20E77C4A002C613D /* AccountOptionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOptionTableVC.swift; sourceTree = "<group>"; };
+		02359FDE20E7A059002C613D /* AccountInfoEditTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoEditTVC.swift; sourceTree = "<group>"; };
+		02359FE020E7BF11002C613D /* AccountInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoTVC.swift; sourceTree = "<group>"; };
 		02B6488A20E66BEA00D11A5C /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 		02B6488C20E66C6C00D11A5C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02B6488E20E6792400D11A5C /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				02B6488E20E6792400D11A5C /* PageViewController.swift */,
 				02359FD820E74CF5002C613D /* AccountViewController.swift */,
 				02359FDC20E77C4A002C613D /* AccountOptionTableVC.swift */,
+				02359FDE20E7A059002C613D /* AccountInfoEditTVC.swift */,
+				02359FE020E7BF11002C613D /* AccountInfoTVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 				8AEEE1B020CBDDE4004B6A6F /* ProductDetailViewController.swift in Sources */,
 				8AA07FCE20BA7C82006091DD /* AdminViewController.swift in Sources */,
 				8A932F4720BBD2BD00707C5A /* ProductCell.swift in Sources */,
+				02359FE120E7BF11002C613D /* AccountInfoTVC.swift in Sources */,
 				02359FD920E74CF6002C613D /* AccountViewController.swift in Sources */,
 				8AB428B620E53ABE00794B58 /* CategoryViewController.swift in Sources */,
 				8A5A513020CEAD010045E231 /* DataImporterParsing.swift in Sources */,
@@ -430,6 +437,7 @@
 				8A43C27520B96F5E00577BDA /* SearchTableViewController.swift in Sources */,
 				8AB428B820E53AD200794B58 /* SlideCategoryViewController.swift in Sources */,
 				8A4CC79220E3AA2F0075E1CB /* CategoryTableViewCell.swift in Sources */,
+				02359FDF20E7A059002C613D /* AccountInfoEditTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,8 +14,6 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnLogout: UIButton!
     
-    var firebaseAuth:FirebaseAuthenAPI!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,6 +26,10 @@ class AccountViewController: UIViewController {
     
     @IBAction func logoutTouched(_ sender: Any) {
         FirebaseAuthenAPI.sharedInstance.logout()
+    }
+    
+    func showEditInfoVC(){
+        self.performSegue(withIdentifier: "showEditInfoSegue", sender: self)
     }
     
 }
