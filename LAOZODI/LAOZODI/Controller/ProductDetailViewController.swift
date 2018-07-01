@@ -13,13 +13,17 @@ import UIKit
 //}
 class ProductDetailViewController: UIViewController {
     var product: Product? = nil
-    //var viewController : ViewController?
     
     
+    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var btnAddToCart: UIButton!
     @IBOutlet weak var lbProductName: UILabel!
     @IBOutlet weak var lbProductPrice: UILabel!
     @IBOutlet weak var taProductDescription: UITextView!
+    
+    @IBOutlet weak var btnAddHeart: UIButton!
+    var isFullHeart:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         btnAddToCart.setGradientBackground(colorOne: UIColor(red: 0.21, green: 0.82, blue: 0.86, alpha: 1), colorTwo: UIColor(red: 0.36, green: 0.53, blue: 0.9, alpha: 1))
@@ -30,6 +34,29 @@ class ProductDetailViewController: UIViewController {
         self.lbProductName.text = product?.name
         self.lbProductPrice.text = "\(product!.price) VND"
         self.taProductDescription.text = product?.description
+        
+        let productImageURL = product?.strURLImage
+        
+        productImage.makeShadowAnimation()
+        btnAddHeart.makeShadowAnimation()
+        btnAddToCart.makeShadowAnimation()
+        
+        if productImageURL != nil{
+            let url = URL(string: productImageURL!)
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data,resspond,error) in
+                if error != nil{
+                    print("@@@@@@@@@@@@@@ ERROR\(error) @@@@@@@@@@@@")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    self.productImage.image = UIImage(data: data!)
+                }
+                
+            }).resume()
+        }
+        
  
     }
 
@@ -71,6 +98,17 @@ class ProductDetailViewController: UIViewController {
     }
     */
 
+    @IBAction func onBtnAddHeartClick(_ sender: Any) {
+        if isFullHeart == true {
+            self.btnAddHeart.setImage(UIImage(named: "hear"), for: .normal)
+        }
+        else{
+            self.btnAddHeart.setImage(UIImage(named: "fullHeart"), for: .normal)
+        }
+        
+        isFullHeart = !isFullHeart
+        print("@@@@@@@@@@@@@@@@@@@@\(isFullHeart)")
+    }
 }
 
 

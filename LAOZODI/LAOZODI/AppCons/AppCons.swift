@@ -102,6 +102,7 @@ public class AppCons{
         case PRODUCT_OBJECT
         case CART_PRODUCT_OBJECT
         case ORDER_OBJECT
+        case USER_OBJECT
     }
     
     public class OrderGroup{
@@ -125,4 +126,16 @@ public class AppCons{
         public static let DO_CHOI_ME_BE  = "ĐỒ CHƠI MẸ VÀ BÉ"
         public static let DO_AN_HANG_HOA = "ĐỒ ĂN VÀ HÀNG HOÁ"
     }
+    
+    //---tri---
+    public class User{
+        public static let TABLE_NAME = "Users"
+        public static let USER_NAME = "Name"
+        public static let USER_EMAIL = "Email"
+        public static let USER_BIRTHDAY = "Birthday"
+        public static let USER_GENDER = "Gender"
+        public static let USER_PASSWORD = "Password"
+    }
+    //-----
+    
 }

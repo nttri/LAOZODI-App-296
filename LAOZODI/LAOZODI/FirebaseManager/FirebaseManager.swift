@@ -45,8 +45,14 @@ public class FirebaseManager{
             let orderJsonObject = [AppCons.OrderObject.ORDER_NUMBER: orderObject.orderNumber,
             AppCons.OrderObject.ORDER_INFO: orderObject.orderInfo] as [String: Any]
             return orderJsonObject
-            
-
+        case .USER_OBJECT:
+            let user = object as! User
+            let userjson = [AppCons.User.USER_EMAIL: user.email,
+                            AppCons.User.USER_NAME: user.name,
+                            AppCons.User.USER_BIRTHDAY: user.birthday,
+                            AppCons.User.USER_GENDER: user.gender,
+                            AppCons.User.USER_PASSWORD: user.password] as [String:Any]
+            return userjson
         default:
             break
         }
@@ -144,6 +150,44 @@ public class FirebaseManager{
             }
         }
         return ""
+    }
+    
+    func addUserToFirebase(user: User){
+        let userJSonObject = toJson(object: user, objectType: .USER_OBJECT)
+        databaseReference.child(AppCons.User.TABLE_NAME).childByAutoId().setValue(userJSonObject)
+    }
+    
+    func makeUserOnline(user: User, screen: UIViewController){
+        var res = false
+        let usersRef = databaseReference.child(AppCons.User.TABLE_NAME)
+        let queryRef = usersRef.queryOrdered(byChild: AppCons.User.USER_EMAIL).queryEqual(toValue: user.email)
+        
+        queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            for snap in snapshot.children {
+                let userSnap = snap as! DataSnapshot
+                let email = (userSnap.childSnapshot(forPath: AppCons.User.USER_EMAIL).value ?? "") as! String
+                let pw = (userSnap.childSnapshot(forPath: AppCons.User.USER_PASSWORD).value ?? "") as! String
+                let name = (userSnap.childSnapshot(forPath: AppCons.User.USER_NAME).value ?? "") as! String
+                let birthday = (userSnap.childSnapshot(forPath: AppCons.User.USER_BIRTHDAY).value ?? "") as! String
+                let sex = (userSnap.childSnapshot(forPath: AppCons.User.USER_GENDER).value ?? "") as! String
+                if(email == user.email && pw == user.password){
+                    UserDefaults.standard.set(email, forKey: "Email")
+                    UserDefaults.standard.set(pw, forKey: "Password")
+                    let _user = User(name: name, email: email, birthday: birthday, gender: sex, pass: pw)
+                    CurrentUser.shared.setUser(_user)
+                    res = true
+                }else{
+                    res = false
+                }
+            }
+            if(res == true){
+                screen.performSegue(withIdentifier: "showHomeViewControllerSegue", sender: self)
+            }else{
+                let alert = UIAlertController(title: "CÁNH BÁO", message: "Tên đăng nhập hoặc mật khẩu không đúng!!!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Đồng ý", style: .default, handler: nil))
+                screen.present(alert, animated: true)
+            }
+        })
     }
     
 }

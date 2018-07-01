@@ -13,9 +13,12 @@ class LoginViewController: UIViewController, AlertDelegate {
     var screenHeight:CGFloat = 0
     
     @IBOutlet weak var appTitle: UILabel!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet var emailField: UITextField!
+    @IBOutlet var passwordField: UITextField!
     @IBOutlet weak var btnRegister: UIButton!
+    
+    var tempEmail = ""
+    var tempPW = ""
     
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -27,6 +30,11 @@ class LoginViewController: UIViewController, AlertDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        emailField.text = tempEmail
+        passwordField.text = tempPW
     }
     
     //MARK: config func
@@ -43,21 +51,11 @@ class LoginViewController: UIViewController, AlertDelegate {
     }
     
     @IBAction func registerTouched(_ sender: Any) {
-        let email:String? = emailField.text
-        let password:String? = passwordField.text
-        FirebaseAuthenAPI.sharedInstance.createAccount(email!,password!, screen: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showHomeViewControllerSegue"{
-            let viewController = segue.destination as! UITabBarController
-        }
     }
     
     // auto signin if the user account still active
     func autoLogin(){
         if let email = UserDefaults.standard.value(forKey: "Email") as? String, let password = UserDefaults.standard.value(forKey: "Password") as? String{
-            print(email)
             FirebaseAuthenAPI.sharedInstance.login(email, password, screen: self)
         }
     }
