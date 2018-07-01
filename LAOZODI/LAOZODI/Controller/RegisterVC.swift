@@ -32,7 +32,7 @@ class RegisterVC: UIViewController {
         let email = tfEmail.text ?? ""
         let password = tfPassword.text ?? ""
         let name = tfName.text ?? ""
-        let birthday = tfPassword.text ?? ""
+        let birthday = tfBirthday.text ?? ""
         let genderIndex:Int = smGender.selectedSegmentIndex
         let gender = genderIndex == 0 ? "Nam" : "Nữ"
         if(email == "" || password == "" || name == "" || birthday == ""){

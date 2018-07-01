@@ -190,4 +190,23 @@ public class FirebaseManager{
         })
     }
     
+    func updateUserInfo(user: User){
+        let usersRef = databaseReference.child(AppCons.User.TABLE_NAME)
+        let queryRef = usersRef.queryOrdered(byChild: AppCons.User.USER_EMAIL).queryEqual(toValue: user.email)
+        
+        usersRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            for snap in snapshot.children {
+                let userSnap = snap as! DataSnapshot
+                let key = userSnap.key as String
+                let email = (userSnap.childSnapshot(forPath: AppCons.User.USER_EMAIL).value ?? "") as! String
+                if(email == user.email){
+                    self.databaseReference.child(AppCons.User.TABLE_NAME).child(key).updateChildValues([AppCons.User.USER_NAME : user.name])
+                    self.databaseReference.child(AppCons.User.TABLE_NAME).child(key).updateChildValues([AppCons.User.USER_BIRTHDAY : user.birthday])
+                    self.databaseReference.child(AppCons.User.TABLE_NAME).child(key).updateChildValues([AppCons.User.USER_GENDER : user.gender])
+                    break
+                }
+            }
+        })
+    }
+    
 }
