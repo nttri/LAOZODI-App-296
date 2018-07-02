@@ -10,6 +10,7 @@
 		02359FE120E7BF11002C613D /* AccountInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02359FE020E7BF11002C613D /* AccountInfoTVC.swift */; };
 		0246054420E8D2870038E179 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246054320E8D2870038E179 /* RegisterVC.swift */; };
 		0246054620E8FF310038E179 /* AccountInfoEditTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246054520E8FF310038E179 /* AccountInfoEditTVC.swift */; };
+		0246054820E9BF650038E179 /* subA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246054720E9BF650038E179 /* subA.swift */; };
 		02B6488B20E66BEA00D11A5C /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6488A20E66BEA00D11A5C /* FirebaseAuthentication.swift */; };
 		02B6488D20E66C6C00D11A5C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6488C20E66C6C00D11A5C /* LoginViewController.swift */; };
 		02B6488F20E6792400D11A5C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B6488E20E6792400D11A5C /* PageViewController.swift */; };
@@ -51,6 +52,7 @@
 		02359FE020E7BF11002C613D /* AccountInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoTVC.swift; sourceTree = "<group>"; };
 		0246054320E8D2870038E179 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		0246054520E8FF310038E179 /* AccountInfoEditTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoEditTVC.swift; sourceTree = "<group>"; };
+		0246054720E9BF650038E179 /* subA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subA.swift; sourceTree = "<group>"; };
 		02B6488A20E66BEA00D11A5C /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
 		02B6488C20E66C6C00D11A5C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02B6488E20E6792400D11A5C /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				8A43C25C20B9617F00577BDA /* Main.storyboard */,
+				0246054720E9BF650038E179 /* subA.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				0246054420E8D2870038E179 /* RegisterVC.swift in Sources */,
 				8A43C26120B9617F00577BDA /* LAOZODI.xcdatamodeld in Sources */,
 				8A81F26620E012560005BC02 /* OrderObject.swift in Sources */,
+				0246054820E9BF650038E179 /* subA.swift in Sources */,
 				8A71CFD320CD67B60077EF43 /* PaymentProductViewController.swift in Sources */,
 				8AA07FD720BABDEB006091DD /* FirebaseManager.swift in Sources */,
 				8A54102220E75C7C004BC58B /* ProductCollectionViewCell.swift in Sources */,
