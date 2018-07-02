@@ -17,6 +17,7 @@ class Product{
     var strURLImage : String
     var warranty: Int
     var abc = "king and i am"
+    var xyz = "product from branch"
     
     init(Identifier _identifier :Int, Name _name: String, Description _description:String, Price _price: Int,
          Brand _brand:String, StrURLImage _strURLImage: String, Warranty _waranty: Int){
