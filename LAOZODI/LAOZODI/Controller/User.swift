@@ -14,6 +14,7 @@ class User {
     var birthday: String
     var gender: String
     var password: String
+    let xyz = "user from branch"
     
     init(name: String?, email: String?, birthday: String?, gender: String?, pass: String?){
         self.email = email ?? ""
