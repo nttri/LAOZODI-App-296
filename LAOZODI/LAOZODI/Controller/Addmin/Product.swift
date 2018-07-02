@@ -16,10 +16,11 @@ class Product{
     var brand : String
     var strURLImage : String
     var warranty: Int
+    var abc = "king and i am"
     
     init(Identifier _identifier :Int, Name _name: String, Description _description:String, Price _price: Int,
          Brand _brand:String, StrURLImage _strURLImage: String, Warranty _waranty: Int){
-        self.identifier = _identifier
+        self.identifier = 30
         self.name = _name
         self.description = _description
         self.price = _price
@@ -30,7 +31,7 @@ class Product{
     
     init(){
         self.identifier = -1
-        self.name = "nil"
+        self.name = "xxx"
         self.description = "nil"
         self.price = -1
         self.brand = "nil"
