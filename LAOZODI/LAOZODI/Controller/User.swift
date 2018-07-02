@@ -2,7 +2,7 @@
 //  User.swift
 //  LAOZODI
 //
-//  Created by NguyenThanhTri on 6/30/18.
+//  Created by NguyenThanhTri on 6/29/18.
 //  Copyright © 2018 Phạm Anh Tuấn. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ class User {
     var password: String
     
     init(name: String?, email: String?, birthday: String?, gender: String?, pass: String?){
-        self.email = email ?? ""
+        self.email = email ?? "email"
         self.name = name ?? ""
         self.birthday = birthday ?? ""
         self.gender = gender ?? ""
@@ -25,7 +25,7 @@ class User {
     
     init(){
         self.email = ""
-        self.name = ""
+        self.name = "name"
         self.birthday = ""
         self.gender = ""
         self.password = ""
