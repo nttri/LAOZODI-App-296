@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+public class SubClassA {
+    let variA = 15
+    let variB = "varB"
+}
