@@ -31,13 +31,13 @@ class Product{
     }
     
     init(){
-        self.identifier = -1
-        self.name = "nil"
-        self.description = "nil"
-        self.price = -1
-        self.brand = "nil"
-        self.strURLImage = "nil"
-        self.warranty = -1
+        self.identifier = 0
+        self.name = ""
+        self.description = ""
+        self.price = 0
+        self.brand = ""
+        self.strURLImage = ""
+        self.warranty = 0
     }
     
     
