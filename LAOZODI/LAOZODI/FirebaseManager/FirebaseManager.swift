@@ -203,6 +203,8 @@ public class FirebaseManager{
                     self.databaseReference.child(AppCons.User.TABLE_NAME).child(key).updateChildValues([AppCons.User.USER_NAME : user.name])
                     self.databaseReference.child(AppCons.User.TABLE_NAME).child(key).updateChildValues([AppCons.User.USER_BIRTHDAY : user.birthday])
                     self.databaseReference.child(AppCons.User.TABLE_NAME).child(key).updateChildValues([AppCons.User.USER_GENDER : user.gender])
+                    CurrentUser.shared.getUser().birthday = user.birthday
+                    CurrentUser.shared.getUser().gender = user.gender
                     break
                 }
             }

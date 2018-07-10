@@ -15,6 +15,8 @@ class AccountInfoEditTVC: UITableViewController {
     @IBOutlet weak var tfBirthday: UITextField!
     @IBOutlet weak var sexBox: UISegmentedControl!
     
+    let datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.tfName.frame.height))
@@ -23,6 +25,10 @@ class AccountInfoEditTVC: UITableViewController {
         paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.tfBirthday.frame.height))
         tfBirthday.leftView = paddingView
         tfBirthday.leftViewMode = UITextFieldViewMode.always
+        
+        createDatePicker()
+        tfName.delegate = self
+        tfBirthday.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +46,41 @@ class AccountInfoEditTVC: UITableViewController {
         }
     }
     
+    func createDatePicker(){
+        
+        //toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        // Button for toolbar
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelPressed))
+        toolbar.setItems([cancel,done], animated: false)
+        
+        tfBirthday.inputAccessoryView = toolbar
+        tfBirthday.inputView = datePicker
+        
+        // format picker for date
+        datePicker.datePickerMode = .date
+        datePicker.minimumDate = Date.init(timeIntervalSince1970: -1576800000)
+        datePicker.maximumDate = Date.init(timeIntervalSince1970: 1009190000)
+    }
+    
+    @objc func donePressed(){
+        // format date
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        let dateStr = formatter.string(from: datePicker.date)
+        
+        tfBirthday.text = "\(dateStr)"
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelPressed(){
+        self.view.endEditing(true)
+    }
+    
     @IBAction func btnUpdateInfoTouched(_ sender: Any) {
         let email = lblEmail.text
         let name = tfName.text
@@ -54,11 +95,25 @@ class AccountInfoEditTVC: UITableViewController {
         }else{
             let user = User(name: name, email: email, birthday: birthday, gender: gender, pass: password)
             FirebaseManager.shared.updateUserInfo(user: user)
+            CurrentUser.shared.getUser().name = user.name
             _ = navigationController?.popViewController(animated: true)
         }
         
     }
     
-    
-
 }
+
+extension AccountInfoEditTVC : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        tfName.resignFirstResponder()
+        tfBirthday.resignFirstResponder()
+    }
+    
+}
+
