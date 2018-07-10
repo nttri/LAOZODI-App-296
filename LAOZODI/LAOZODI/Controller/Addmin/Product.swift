@@ -16,27 +16,27 @@ class Product{
     var brand : String
     var strURLImage : String
     var warranty: Int
-    var abc = "king and i am"
+    var abc = "queen and i am"
     
     init(Identifier _identifier :Int, Name _name: String, Description _description:String, Price _price: Int,
          Brand _brand:String, StrURLImage _strURLImage: String, Warranty _waranty: Int){
-        self.identifier = 30
+        self.identifier = 60
         self.name = _name
         self.description = _description
-        self.price = _price
+        self.price = 100_000
         self.brand = _brand
         self.strURLImage = _strURLImage
         self.warranty = _waranty
     }
     
     init(){
-        self.identifier = -1
+        self.identifier = 100
         self.name = ".     "
         self.description = ".       "
-        self.price = -1
+        self.price = 10_000
         self.brand = ".       "
         self.strURLImage = ".     "
-        self.warranty = -1
+        self.warranty = 3
     }
     
     
